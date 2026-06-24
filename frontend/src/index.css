@@ -1,0 +1,119 @@
+@import "tailwindcss";
+.header{
+  display: flex;
+  justify-content: space-between ;
+  font-family: Arial, sans-serif;
+
+}
+.nav-bar{
+  display: flex;
+  gap: 20px;
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.logo-container img{
+  width: 50px;
+  height: 50px;
+}
+.logo-container h1{
+  font-size: 24px;
+  margin: 0;
+}
+.login-btn{
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 40%;
+  background-color: #d8e6f6;
+  color: darkblue;
+  border: solid rgb(47, 11, 155) 0.5px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-right: 20px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  padding: 5px 10px;
+  
+  border-radius: 50px;
+}
+
+nav ul li a:hover{
+  color: #007bff;
+  background-color: #e6f0ff0e;
+  border-radius: 50px;
+  
+}
+
+.hero{
+  margin-top: 50px;
+  display: flex;
+  /* justify-content: center; */
+ 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.hero h1{
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hero img{
+  width: auto;
+  height: 300px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 30px;
+  margin-right: 20px;
+}
+
+.hero .hero-btn{
+  padding: 10px 20px;
+  border-radius: 20px;
+
+  color: darkblue;
+  border: solid rgb(47, 11, 155) 0.5px;
+  cursor: pointer;
+}
+
+.hero content{
+  margin-top: 20px;
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+div .container{
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: #a51111; */
+  padding: 20px;
+  height: 500px;
+}
+
+div .container .wrapper{
+  width: 50%;
+  color: rgb(0, 0, 0);
+  /* background-color: #948f8f; */
+  margin-right: 0px;
+}
