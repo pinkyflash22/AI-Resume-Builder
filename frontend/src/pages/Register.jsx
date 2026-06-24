@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
  export function Register(){
 
@@ -11,6 +12,7 @@ import axios from "axios";
         name: "",
         password_confirmation:"",
     });
+    const [showPassword, setShowPassword] = useState(false); //state para sa show password
     const [errors, setErrors] = useState({});
     const [message, setMessage] = useState(""); //for displaying message feedback to the user
     //key event para sa every change ng keys
@@ -93,24 +95,41 @@ import axios from "axios";
 
     return(
         <>
-        <form onSubmit={handleSubmit} className="loginForm">
-        <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} />
-         {errors.name && <span className="error">{errors.name}</span>}
-         <input type ="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-         {errors.email && <span className ="error">{errors.email}</span>}
-         <input type ="password" name="password" value={formData.password} placeholder="Password" onChange={handleChange} />
-         {errors.password && <span className="error">{errors.password}</span>}
-            <input
-            type="password"
-            name="password_confirmation"
-            placeholder="Confirm Password"
-            value={formData.password_confirmation}
-            onChange={handleChange}
-        />
-         {errors.password_confirmation && <span className="error text-danger">{errors.password_confirmation}</span>}
+        <div className="register-container">
+            <div className="left-side">
+                <h2>Join Ai Resume Builder</h2>
+                <p>Build your resume with the power of AI. Create a professional resume in minutes.</p>
+                <img src="https://img.freepik.com/free-vector/gradient-technology-background_23-2149438727.jpg?w=2000" alt="Register" className="register-image" />
+            </div>
+            <div className="right-side">
+                <h2>Create An Account</h2>
+                <form onSubmit={handleSubmit} className="loginForm">
+               
+                <input type="text" name="name" className="form-control" placeholder="Name" value={formData.name} onChange={handleChange} />
+                {errors.name && <span className="error">{errors.name}</span>}
+                <input type ="email" name="email" className="form-control" placeholder="Email" value={formData.email} onChange={handleChange} />
+                {errors.email && <span className ="error">{errors.email}</span>}
+               <div style={{position:"relative", display:"flex"}}> <input type={showPassword ? "text" : "password"} name="password" className="form-control" value={formData.password} placeholder="Password" onChange={handleChange} />
+               <button type="button" className="show-password-btn btn" onClick={() => setShowPassword(!showPassword)}>  {showPassword ? <FaEyeSlash /> : <FaEye />} </button></div>
+                {errors.password && <span className="error">{errors.password}</span>}
+                    <input
+                    type={showPassword ? "text" : "password"}
+                    name="password_confirmation"
+                    className="form-control"
+                    placeholder="Confirm Password"
+                    value={formData.password_confirmation}
+                    onChange={handleChange}
+                />
+                {errors.password_confirmation && <span className="error text-danger">{errors.password_confirmation}</span>}
+                    
+                <button type="submit" className="btn btn-primary">Register</button>
+                <hr />
+                <button type="button" className="btn btn-outline-secondary">Continue with Google</button>
+
+                </form>
+            </div>
             
-         <button type="submit">Register</button>
-        </form>
+        </div>
         </>
     );
 }

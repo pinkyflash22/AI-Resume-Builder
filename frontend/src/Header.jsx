@@ -18,14 +18,16 @@ function Header(){
                 </ul>
             </nav>
             {/* para mag karon ng route sa login */}
-        <Link to="/register"> 
-        <button className="login-btn">Register</button>
-        
+       <div className="button-container ">
+         <Link to="/register"> 
+        <button className="register-btn mr-3">Register</button>
         </Link>
+        
         <Link to="/login"> 
-        <button className="login-btn">Login</button>
+        <button className="ml-2 login-btn">Login</button>
         
         </Link>
+       </div>
         </header>
     );
 }

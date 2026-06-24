@@ -1,20 +1,23 @@
 @import "tailwindcss";
 .header{
+  padding: 10px 20px;
   display: flex;
-  justify-content: space-between ;
-  font-family: Arial, sans-serif;
-
+  justify-content: space-evenly ;
+  font-family: Arial, poppins, sans-serif;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;  
 }
 .nav-bar{
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .logo-container{
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 20px;
+  /* margin-left: 1px; */
 }
 
 .logo-container img{
@@ -25,26 +28,42 @@
   font-size: 24px;
   margin: 0;
 }
+
+.button-container{
+  display: flex;
+  gap: 10px;
+}
 .login-btn{
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 20px;
-  width: 40%;
+  
   background-color: #d8e6f6;
   color: darkblue;
   border: solid rgb(47, 11, 155) 0.5px;
   cursor: pointer;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
-
+.register-btn{
+  padding: 5px 10px;
+  border-radius: 20px;
+  
+  background-color: #f3f2f6;
+  color: rgb(20, 0, 0);
+  border: solid rgb(137, 137, 137) 0.5px;
+  cursor: pointer;
+  /* margin-right: 20px; */
+}
 nav ul li{
+
+  font-family: Arial, sans-serif;
+  font-size: 18px;
   list-style: none;
   display: inline-block;
   margin-right: 20px;
 }
 nav ul li a{
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: #944df7;
   font-family: Arial, sans-serif;
   padding: 5px 10px;
   
@@ -56,6 +75,9 @@ nav ul li a:hover{
   background-color: #e6f0ff0e;
   border-radius: 50px;
   
+}
+nav{
+  margin-top: 10px;
 }
 
 .hero{
@@ -94,7 +116,7 @@ nav ul li a:hover{
   margin-top: 20px;
 }
 
-.loginForm{
+/* .loginForm{
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -102,7 +124,7 @@ nav ul li a:hover{
   margin: 0 auto;
   background-color: #f9f9f9;
   padding: 20px;
-}
+} */
 div .container{
   display: flex;
   justify-content: space-evenly;

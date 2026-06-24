@@ -8,7 +8,7 @@ export function Login(){
     }
     
     );
-
+    const [message, setMessage] = useState(""); //for displaying message feedback to the user
     const [errors, setErrors] = useState({});
 
     //every change sa keys
@@ -25,6 +25,15 @@ export function Login(){
     const handleSubmit = async (e)=>{
         e.preventDefault();
         // Handle login logic here
+        try{
+            const response = await axios.post("http://localhost:8000/api/login", email);
+            console.log(response.data);
+        }catch(error){
+             console.log("Login error:", error.response?.data || error.message);
+        }
+
+        setMessage('login successful');
+        
     }
 
     const validateField = (name, value) => {
@@ -72,6 +81,7 @@ export function Login(){
                     <input type="password" className="form-control mb-3" id="password" name="password" value={email.password} onChange={handleChange} required />
                     {errors.password && <span className="error">{errors.password}</span>}
                     <button type="submit" className="login-btn">Login</button>
+                    {message.name && <span className=""></span>}
                 </form>
             </div>
         </>
